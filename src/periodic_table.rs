@@ -4,23 +4,24 @@
 #[derive(Debug)]
 #[allow(dead_code)]
 pub struct Element {
-    atomic_number: u8,
-    symbol: &'static str,
-    name: &'static str,
-    atomic_mass: f32,
-    cpk_hex_color: Option<&'static str>,
-    electron_configuration: &'static str,
-    electronegativity: Option<f32>,
-    atomic_radius: Option<f32>,
-    ionization_energy: Option<f32>,
-    electron_affinity: Option<f32>,
-    oxidation_states: &'static [i8],
-    standard_state: &'static str,
-    melting_point: Option<f32>,
-    boiling_point: Option<f32>,
-    density: Option<f32>,
-    group_block: &'static str,
-    year_discovered: Option<u16>,
+    pub atomic_number: u8,
+    pub stable_isotopes: &'static [u8],
+    pub symbol: &'static str,
+    pub name: &'static str,
+    pub atomic_mass: f32,
+    pub cpk_hex_color: Option<&'static str>,
+    pub electron_configuration: &'static str,
+    pub electronegativity: Option<f32>,
+    pub atomic_radius: Option<f32>,
+    pub ionization_energy: Option<f32>,
+    pub electron_affinity: Option<f32>,
+    pub oxidation_states: &'static [i8],
+    pub standard_state: &'static str,
+    pub melting_point: Option<f32>,
+    pub boiling_point: Option<f32>,
+    pub density: Option<f32>,
+    pub group_block: &'static str,
+    pub year_discovered: Option<u16>,
 }
 
 /**
@@ -29,6 +30,7 @@ pub struct Element {
 pub const ELEMENTS: &'static [Element] = &[
     Element {
         atomic_number: 1,
+        stable_isotopes: &[1, 2],
         symbol: "H",
         name: "Hydrogen",
         atomic_mass: 1.0080,
@@ -48,6 +50,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 2,
+        stable_isotopes: &[3, 4],
         symbol: "He",
         name: "Helium",
         atomic_mass: 4.00260,
@@ -67,6 +70,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 3,
+        stable_isotopes: &[6, 7],
         symbol: "Li",
         name: "Lithium",
         atomic_mass: 7.0,
@@ -86,6 +90,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 4,
+        stable_isotopes: &[9],
         symbol: "Be",
         name: "Beryllium",
         atomic_mass: 9.012183,
@@ -105,6 +110,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 5,
+        stable_isotopes: &[10, 11],
         symbol: "B",
         name: "Boron",
         atomic_mass: 10.81,
@@ -124,6 +130,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 6,
+        stable_isotopes: &[12, 13],
         symbol: "C",
         name: "Carbon",
         atomic_mass: 12.011,
@@ -143,6 +150,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 7,
+        stable_isotopes: &[14, 15],
         symbol: "N",
         name: "Nitrogen",
         atomic_mass: 14.007,
@@ -162,6 +170,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 8,
+        stable_isotopes: &[16, 17, 18],
         symbol: "O",
         name: "Oxygen",
         atomic_mass: 15.999,
@@ -181,6 +190,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 9,
+        stable_isotopes: &[19],
         symbol: "F",
         name: "Fluorine",
         atomic_mass: 18.99840316,
@@ -200,6 +210,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 10,
+        stable_isotopes: &[20, 21, 22],
         symbol: "Ne",
         name: "Neon",
         atomic_mass: 20.180,
@@ -219,6 +230,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 11,
+        stable_isotopes: &[23],
         symbol: "Na",
         name: "Sodium",
         atomic_mass: 22.9897693,
@@ -238,6 +250,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 12,
+        stable_isotopes: &[24, 25, 26],
         symbol: "Mg",
         name: "Magnesium",
         atomic_mass: 24.305,
@@ -257,6 +270,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 13,
+        stable_isotopes: &[27],
         symbol: "Al",
         name: "Aluminum",
         atomic_mass: 26.981538,
@@ -276,6 +290,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 14,
+        stable_isotopes: &[28, 29, 30],
         symbol: "Si",
         name: "Silicon",
         atomic_mass: 28.085,
@@ -295,6 +310,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 15,
+        stable_isotopes: &[31],
         symbol: "P",
         name: "Phosphorus",
         atomic_mass: 30.97376200,
@@ -314,6 +330,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 16,
+        stable_isotopes: &[32, 33, 34, 36],
         symbol: "S",
         name: "Sulfur",
         atomic_mass: 32.07,
@@ -333,6 +350,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 17,
+        stable_isotopes: &[35, 37],
         symbol: "Cl",
         name: "Chlorine",
         atomic_mass: 35.45,
@@ -352,6 +370,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 18,
+        stable_isotopes: &[36, 38, 40],
         symbol: "Ar",
         name: "Argon",
         atomic_mass: 39.9,
@@ -371,6 +390,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 19,
+        stable_isotopes: &[39, 41],
         symbol: "K",
         name: "Potassium",
         atomic_mass: 39.0983,
@@ -390,6 +410,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 20,
+        stable_isotopes: &[40, 42, 43, 44, 46],
         symbol: "Ca",
         name: "Calcium",
         atomic_mass: 40.08,
@@ -409,6 +430,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 21,
+        stable_isotopes: &[45],
         symbol: "Sc",
         name: "Scandium",
         atomic_mass: 44.95591,
@@ -428,6 +450,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 22,
+        stable_isotopes: &[46, 47, 48, 49, 50],
         symbol: "Ti",
         name: "Titanium",
         atomic_mass: 47.867,
@@ -447,6 +470,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 23,
+        stable_isotopes: &[51],
         symbol: "V",
         name: "Vanadium",
         atomic_mass: 50.9415,
@@ -466,6 +490,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 24,
+        stable_isotopes: &[52, 53, 54],
         symbol: "Cr",
         name: "Chromium",
         atomic_mass: 51.996,
@@ -485,6 +510,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 25,
+        stable_isotopes: &[55],
         symbol: "Mn",
         name: "Manganese",
         atomic_mass: 54.93804,
@@ -504,6 +530,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 26,
+        stable_isotopes: &[54, 56, 57, 58],
         symbol: "Fe",
         name: "Iron",
         atomic_mass: 55.84,
@@ -523,6 +550,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 27,
+        stable_isotopes: &[59],
         symbol: "Co",
         name: "Cobalt",
         atomic_mass: 58.93319,
@@ -542,6 +570,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 28,
+        stable_isotopes: &[58, 60, 61, 62, 64],
         symbol: "Ni",
         name: "Nickel",
         atomic_mass: 58.693,
@@ -561,6 +590,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 29,
+        stable_isotopes: &[63, 65],
         symbol: "Cu",
         name: "Copper",
         atomic_mass: 63.55,
@@ -580,6 +610,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 30,
+        stable_isotopes: &[64, 66, 67, 68, 70],
         symbol: "Zn",
         name: "Zinc",
         atomic_mass: 65.4,
@@ -599,6 +630,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 31,
+        stable_isotopes: &[69, 71],
         symbol: "Ga",
         name: "Gallium",
         atomic_mass: 69.723,
@@ -618,6 +650,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 32,
+        stable_isotopes: &[70, 72, 73, 74],
         symbol: "Ge",
         name: "Germanium",
         atomic_mass: 72.63,
@@ -637,6 +670,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 33,
+        stable_isotopes: &[75],
         symbol: "As",
         name: "Arsenic",
         atomic_mass: 74.92159,
@@ -656,6 +690,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 34,
+        stable_isotopes: &[74, 76, 77, 78, 80],
         symbol: "Se",
         name: "Selenium",
         atomic_mass: 78.97,
@@ -675,6 +710,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 35,
+        stable_isotopes: &[79, 81],
         symbol: "Br",
         name: "Bromine",
         atomic_mass: 79.90,
@@ -694,6 +730,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 36,
+        stable_isotopes: &[80, 82, 83, 84, 86],
         symbol: "Kr",
         name: "Krypton",
         atomic_mass: 83.80,
@@ -713,6 +750,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 37,
+        stable_isotopes: &[85],
         symbol: "Rb",
         name: "Rubidium",
         atomic_mass: 85.468,
@@ -732,6 +770,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 38,
+        stable_isotopes: &[84, 86, 87, 88],
         symbol: "Sr",
         name: "Strontium",
         atomic_mass: 87.62,
@@ -751,6 +790,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 39,
+        stable_isotopes: &[89],
         symbol: "Y",
         name: "Yttrium",
         atomic_mass: 88.90584,
@@ -770,6 +810,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 40,
+        stable_isotopes: &[90, 91, 92, 94],
         symbol: "Zr",
         name: "Zirconium",
         atomic_mass: 91.22,
@@ -789,6 +830,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 41,
+        stable_isotopes: &[93],
         symbol: "Nb",
         name: "Niobium",
         atomic_mass: 92.90637,
@@ -808,6 +850,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 42,
+        stable_isotopes: &[92, 94, 95, 96, 97, 98],
         symbol: "Mo",
         name: "Molybdenum",
         atomic_mass: 95.95,
@@ -827,6 +870,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 43,
+        stable_isotopes: &[],
         symbol: "Tc",
         name: "Technetium",
         atomic_mass: 96.90636,
@@ -846,6 +890,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 44,
+        stable_isotopes: &[96, 98, 99, 100, 101, 102, 104],
         symbol: "Ru",
         name: "Ruthenium",
         atomic_mass: 101.1,
@@ -865,6 +910,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 45,
+        stable_isotopes: &[103],
         symbol: "Rh",
         name: "Rhodium",
         atomic_mass: 102.9055,
@@ -884,6 +930,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 46,
+        stable_isotopes: &[102, 104, 105, 106, 108, 110],
         symbol: "Pd",
         name: "Palladium",
         atomic_mass: 106.42,
@@ -903,6 +950,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 47,
+        stable_isotopes: &[107, 109],
         symbol: "Ag",
         name: "Silver",
         atomic_mass: 107.868,
@@ -922,6 +970,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 48,
+        stable_isotopes: &[106, 108, 110, 111, 112, 114],
         symbol: "Cd",
         name: "Cadmium",
         atomic_mass: 112.41,
@@ -941,6 +990,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 49,
+        stable_isotopes: &[113],
         symbol: "In",
         name: "Indium",
         atomic_mass: 114.818,
@@ -960,6 +1010,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 50,
+        stable_isotopes: &[112, 114, 115, 116, 117, 118, 119, 120, 122, 124],
         symbol: "Sn",
         name: "Tin",
         atomic_mass: 118.71,
@@ -979,6 +1030,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 51,
+        stable_isotopes: &[121, 123],
         symbol: "Sb",
         name: "Antimony",
         atomic_mass: 121.760,
@@ -998,6 +1050,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 52,
+        stable_isotopes: &[120, 122, 123, 124, 125, 126],
         symbol: "Te",
         name: "Tellurium",
         atomic_mass: 127.6,
@@ -1017,6 +1070,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 53,
+        stable_isotopes: &[127],
         symbol: "I",
         name: "Iodine",
         atomic_mass: 126.9045,
@@ -1036,6 +1090,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 54,
+        stable_isotopes: &[126, 128, 129, 130, 131, 132, 134],
         symbol: "Xe",
         name: "Xenon",
         atomic_mass: 131.29,
@@ -1055,6 +1110,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 55,
+        stable_isotopes: &[133],
         symbol: "Cs",
         name: "Cesium",
         atomic_mass: 132.9054520,
@@ -1074,6 +1130,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 56,
+        stable_isotopes: &[132, 134, 135, 136, 137, 138],
         symbol: "Ba",
         name: "Barium",
         atomic_mass: 137.33,
@@ -1093,6 +1150,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 57,
+        stable_isotopes: &[139],
         symbol: "La",
         name: "Lanthanum",
         atomic_mass: 138.9055,
@@ -1112,6 +1170,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 58,
+        stable_isotopes: &[136, 138, 140, 142],
         symbol: "Ce",
         name: "Cerium",
         atomic_mass: 140.116,
@@ -1131,6 +1190,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 59,
+        stable_isotopes: &[141],
         symbol: "Pr",
         name: "Praseodymium",
         atomic_mass: 140.90766,
@@ -1150,6 +1210,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 60,
+        stable_isotopes: &[142, 143, 145, 146, 148],
         symbol: "Nd",
         name: "Neodymium",
         atomic_mass: 144.24,
@@ -1169,6 +1230,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 61,
+        stable_isotopes: &[],
         symbol: "Pm",
         name: "Promethium",
         atomic_mass: 144.91276,
@@ -1188,6 +1250,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 62,
+        stable_isotopes: &[144, 149, 150, 152, 154],
         symbol: "Sm",
         name: "Samarium",
         atomic_mass: 150.4,
@@ -1207,6 +1270,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 63,
+        stable_isotopes: &[153],
         symbol: "Eu",
         name: "Europium",
         atomic_mass: 151.964,
@@ -1226,6 +1290,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 64,
+        stable_isotopes: &[154, 155, 156, 157, 158, 160],
         symbol: "Gd",
         name: "Gadolinium",
         atomic_mass: 157.2,
@@ -1245,6 +1310,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 65,
+        stable_isotopes: &[159],
         symbol: "Tb",
         name: "Terbium",
         atomic_mass: 158.92535,
@@ -1264,6 +1330,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 66,
+        stable_isotopes: &[156, 158, 160, 161, 162, 163, 164],
         symbol: "Dy",
         name: "Dysprosium",
         atomic_mass: 162.500,
@@ -1283,6 +1350,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 67,
+        stable_isotopes: &[165],
         symbol: "Ho",
         name: "Holmium",
         atomic_mass: 164.93033,
@@ -1302,6 +1370,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 68,
+        stable_isotopes: &[162, 164, 166, 167, 168, 170],
         symbol: "Er",
         name: "Erbium",
         atomic_mass: 167.26,
@@ -1321,6 +1390,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 69,
+        stable_isotopes: &[169],
         symbol: "Tm",
         name: "Thulium",
         atomic_mass: 168.93422,
@@ -1340,6 +1410,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 70,
+        stable_isotopes: &[168, 170, 171, 172, 173, 174, 176],
         symbol: "Yb",
         name: "Ytterbium",
         atomic_mass: 173.05,
@@ -1359,6 +1430,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 71,
+        stable_isotopes: &[175],
         symbol: "Lu",
         name: "Lutetium",
         atomic_mass: 174.9668,
@@ -1378,6 +1450,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 72,
+        stable_isotopes: &[176, 177, 178, 179, 180],
         symbol: "Hf",
         name: "Hafnium",
         atomic_mass: 178.49,
@@ -1397,6 +1470,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 73,
+        stable_isotopes: &[181],
         symbol: "Ta",
         name: "Tantalum",
         atomic_mass: 180.9479,
@@ -1416,6 +1490,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 74,
+        stable_isotopes: &[182, 183, 184, 186],
         symbol: "W",
         name: "Tungsten",
         atomic_mass: 183.84,
@@ -1435,6 +1510,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 75,
+        stable_isotopes: &[185],
         symbol: "Re",
         name: "Rhenium",
         atomic_mass: 186.207,
@@ -1454,6 +1530,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 76,
+        stable_isotopes: &[187, 188, 189, 190, 192],
         symbol: "Os",
         name: "Osmium",
         atomic_mass: 190.2,
@@ -1473,6 +1550,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 77,
+        stable_isotopes: &[191, 193],
         symbol: "Ir",
         name: "Iridium",
         atomic_mass: 192.22,
@@ -1492,6 +1570,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 78,
+        stable_isotopes: &[192, 194, 195, 196, 198],
         symbol: "Pt",
         name: "Platinum",
         atomic_mass: 195.08,
@@ -1511,6 +1590,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 79,
+        stable_isotopes: &[197],
         symbol: "Au",
         name: "Gold",
         atomic_mass: 196.96657,
@@ -1530,6 +1610,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 80,
+        stable_isotopes: &[196, 198, 199, 200, 201, 202, 204],
         symbol: "Hg",
         name: "Mercury",
         atomic_mass: 200.59,
@@ -1549,6 +1630,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 81,
+        stable_isotopes: &[203, 205],
         symbol: "Tl",
         name: "Thallium",
         atomic_mass: 204.383,
@@ -1568,6 +1650,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 82,
+        stable_isotopes: &[204, 206, 207, 208],
         symbol: "Pb",
         name: "Lead",
         atomic_mass: 207.0,
@@ -1587,6 +1670,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 83,
+        stable_isotopes: &[],
         symbol: "Bi",
         name: "Bismuth",
         atomic_mass: 208.98040,
@@ -1606,6 +1690,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 84,
+        stable_isotopes: &[],
         symbol: "Po",
         name: "Polonium",
         atomic_mass: 208.98243,
@@ -1625,6 +1710,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 85,
+        stable_isotopes: &[],
         symbol: "At",
         name: "Astatine",
         atomic_mass: 209.98715,
@@ -1644,6 +1730,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 86,
+        stable_isotopes: &[],
         symbol: "Rn",
         name: "Radon",
         atomic_mass: 222.01758,
@@ -1663,6 +1750,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 87,
+        stable_isotopes: &[],
         symbol: "Fr",
         name: "Francium",
         atomic_mass: 223.01973,
@@ -1682,6 +1770,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 88,
+        stable_isotopes: &[],
         symbol: "Ra",
         name: "Radium",
         atomic_mass: 226.02541,
@@ -1701,6 +1790,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 89,
+        stable_isotopes: &[],
         symbol: "Ac",
         name: "Actinium",
         atomic_mass: 227.02775,
@@ -1720,6 +1810,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 90,
+        stable_isotopes: &[],
         symbol: "Th",
         name: "Thorium",
         atomic_mass: 232.038,
@@ -1739,6 +1830,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 91,
+        stable_isotopes: &[],
         symbol: "Pa",
         name: "Protactinium",
         atomic_mass: 231.03588,
@@ -1758,6 +1850,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 92,
+        stable_isotopes: &[],
         symbol: "U",
         name: "Uranium",
         atomic_mass: 238.0289,
@@ -1777,6 +1870,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 93,
+        stable_isotopes: &[],
         symbol: "Np",
         name: "Neptunium",
         atomic_mass: 237.048172,
@@ -1796,6 +1890,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 94,
+        stable_isotopes: &[],
         symbol: "Pu",
         name: "Plutonium",
         atomic_mass: 244.06420,
@@ -1815,6 +1910,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 95,
+        stable_isotopes: &[],
         symbol: "Am",
         name: "Americium",
         atomic_mass: 243.061380,
@@ -1834,6 +1930,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 96,
+        stable_isotopes: &[],
         symbol: "Cm",
         name: "Curium",
         atomic_mass: 247.07035,
@@ -1853,6 +1950,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 97,
+        stable_isotopes: &[],
         symbol: "Bk",
         name: "Berkelium",
         atomic_mass: 247.07031,
@@ -1872,6 +1970,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 98,
+        stable_isotopes: &[],
         symbol: "Cf",
         name: "Californium",
         atomic_mass: 251.07959,
@@ -1891,6 +1990,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 99,
+        stable_isotopes: &[],
         symbol: "Es",
         name: "Einsteinium",
         atomic_mass: 252.0830,
@@ -1910,6 +2010,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 100,
+        stable_isotopes: &[],
         symbol: "Fm",
         name: "Fermium",
         atomic_mass: 257.09511,
@@ -1929,6 +2030,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 101,
+        stable_isotopes: &[],
         symbol: "Md",
         name: "Mendelevium",
         atomic_mass: 258.09843,
@@ -1948,6 +2050,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 102,
+        stable_isotopes: &[],
         symbol: "No",
         name: "Nobelium",
         atomic_mass: 259.10100,
@@ -1967,6 +2070,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 103,
+        stable_isotopes: &[],
         symbol: "Lr",
         name: "Lawrencium",
         atomic_mass: 266.120,
@@ -1986,6 +2090,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 104,
+        stable_isotopes: &[],
         symbol: "Rf",
         name: "Rutherfordium",
         atomic_mass: 267.122,
@@ -2005,6 +2110,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 105,
+        stable_isotopes: &[],
         symbol: "Db",
         name: "Dubnium",
         atomic_mass: 268.126,
@@ -2024,6 +2130,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 106,
+        stable_isotopes: &[],
         symbol: "Sg",
         name: "Seaborgium",
         atomic_mass: 269.128,
@@ -2043,6 +2150,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 107,
+        stable_isotopes: &[],
         symbol: "Bh",
         name: "Bohrium",
         atomic_mass: 270.133,
@@ -2062,6 +2170,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 108,
+        stable_isotopes: &[],
         symbol: "Hs",
         name: "Hassium",
         atomic_mass: 269.1336,
@@ -2081,6 +2190,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 109,
+        stable_isotopes: &[],
         symbol: "Mt",
         name: "Meitnerium",
         atomic_mass: 277.154,
@@ -2100,6 +2210,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 110,
+        stable_isotopes: &[],
         symbol: "Ds",
         name: "Darmstadtium",
         atomic_mass: 282.166,
@@ -2119,6 +2230,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 111,
+        stable_isotopes: &[],
         symbol: "Rg",
         name: "Roentgenium",
         atomic_mass: 282.169,
@@ -2138,6 +2250,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 112,
+        stable_isotopes: &[],
         symbol: "Cn",
         name: "Copernicium",
         atomic_mass: 286.179,
@@ -2157,6 +2270,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 113,
+        stable_isotopes: &[],
         symbol: "Nh",
         name: "Nihonium",
         atomic_mass: 286.182,
@@ -2176,6 +2290,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 114,
+        stable_isotopes: &[],
         symbol: "Fl",
         name: "Flerovium",
         atomic_mass: 290.192,
@@ -2195,6 +2310,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 115,
+        stable_isotopes: &[],
         symbol: "Mc",
         name: "Moscovium",
         atomic_mass: 290.196,
@@ -2214,6 +2330,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 116,
+        stable_isotopes: &[],
         symbol: "Lv",
         name: "Livermorium",
         atomic_mass: 293.205,
@@ -2233,6 +2350,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 117,
+        stable_isotopes: &[],
         symbol: "Ts",
         name: "Tennessine",
         atomic_mass: 294.211,
@@ -2252,6 +2370,7 @@ pub const ELEMENTS: &'static [Element] = &[
     },
     Element {
         atomic_number: 118,
+        stable_isotopes: &[],
         symbol: "Og",
         name: "Oganesson",
         atomic_mass: 295.216,
