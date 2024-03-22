@@ -4,7 +4,7 @@ With toolium you can easily humanize versions of your software! 🚀 Simply run 
 If you are still unsure what to do... consider running `toolium help` to get a list of all available commands. 🤓
 
 ## 🦀 Rust
-This project uses Rust as the progrogramming language. The following commands are available:
+This project uses Rust as the programming language. The following commands are available:
 
 | Command | Description |
 | --- | --- |

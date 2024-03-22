@@ -69,7 +69,7 @@ fn main() {
 
                     let element =
                         &unstable_isotopes[(input_sum % unstable_isotopes.len() as i32) as usize];
-                    let oxidatoin = if element.oxidation_states.len() > 0 {
+                    let oxidation = if element.oxidation_states.len() > 0 {
                         element.oxidation_states
                             [(input_sum % element.oxidation_states.len() as i32) as usize]
                     } else {
@@ -79,7 +79,7 @@ fn main() {
 
                     println!(
                         "{}",
-                        format!("{}-{}-{}", element.group_block, element.name, oxidatoin)
+                        format!("{}-{}-{}", element.group_block, element.name, oxidation)
                             .to_lowercase()
                             .replace(" ", "-")
                             .truecolor(
