@@ -31,7 +31,11 @@ fn main() {
             }
 
             // Convert input to index number for periodic table
-            let input_sum: i32 = input.chars().map(|c| c as i32).sum::<i32>();
+            let input_sum: i32 = input
+                .chars()
+                .enumerate()
+                .map(|(i, c)| (i + 1) as i32 * (c as i32))
+                .sum::<i32>();
 
             match flag.as_str() {
                 "--stable" => {
