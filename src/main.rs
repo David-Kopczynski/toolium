@@ -20,8 +20,15 @@ fn main() {
 
         "version" => {
             // Get generic input
-            let input = std::env::args().nth(2).unwrap_or("".to_string());
+            let mut input = std::env::args().nth(2).unwrap_or("".to_string());
             let flag = std::env::args().nth(3).unwrap_or("--stable".to_string());
+
+            // Check if input is empty
+            // Return own version if input is empty
+            if input.is_empty() {
+                print!("Running on version: ");
+                input = env!("CARGO_PKG_VERSION").to_string();
+            }
 
             // Convert input to index number for periodic table
             let input_sum: i32 = input.chars().map(|c| c as i32).sum::<i32>();
