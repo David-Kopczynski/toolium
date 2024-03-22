@@ -934,7 +934,7 @@ pub const ELEMENTS: &'static [Element] = &[
         symbol: "Pd",
         name: "Palladium",
         atomic_mass: 106.42,
-        cpk_hex_color: Some("6985"),
+        cpk_hex_color: Some("006985"),
         electron_configuration: "[Kr]4d10",
         electronegativity: Some(2.2),
         atomic_radius: Some(202.0),
