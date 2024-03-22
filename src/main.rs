@@ -24,7 +24,7 @@ fn main() {
             let flag = std::env::args().nth(3).unwrap_or("--stable".to_string());
 
             // Convert input to index number for periodic table
-            let input_sum: usize = input.chars().map(|c| c as usize).sum::<usize>();
+            let input_sum: i32 = input.chars().map(|c| c as i32).sum::<i32>();
 
             match flag.as_str() {
                 "--stable" => {
@@ -34,8 +34,10 @@ fn main() {
                         .filter(|element| element.stable_isotopes.len() > 0)
                         .collect::<Vec<&periodic_table::Element>>();
 
-                    let element = &stable_isotopes[input_sum % stable_isotopes.len()];
-                    let stable = element.stable_isotopes[input_sum % element.stable_isotopes.len()];
+                    let element =
+                        &stable_isotopes[(input_sum % stable_isotopes.len() as i32) as usize];
+                    let stable = element.stable_isotopes
+                        [(input_sum % element.stable_isotopes.len() as i32) as usize];
                     let rgb = Rgb::from_hex_str(element.cpk_hex_color.unwrap_or("000000")).unwrap();
 
                     println!(
@@ -58,9 +60,11 @@ fn main() {
                         .filter(|element| element.stable_isotopes.len() == 0)
                         .collect::<Vec<&periodic_table::Element>>();
 
-                    let element = &unstable_isotopes[input_sum % unstable_isotopes.len()];
+                    let element =
+                        &unstable_isotopes[(input_sum % unstable_isotopes.len() as i32) as usize];
                     let oxidatoin = if element.oxidation_states.len() > 0 {
-                        element.oxidation_states[input_sum % element.oxidation_states.len()]
+                        element.oxidation_states
+                            [(input_sum % element.oxidation_states.len() as i32) as usize]
                     } else {
                         0
                     };
