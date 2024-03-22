@@ -50,7 +50,7 @@ fn main() {
                         &stable_isotopes[(input_sum % stable_isotopes.len() as i32) as usize];
                     let stable = element.stable_isotopes
                         [(input_sum % element.stable_isotopes.len() as i32) as usize];
-                    let rgb = Rgb::from_hex_str(element.cpk_hex_color.unwrap_or("000000")).unwrap();
+                    let rgb = Rgb::from_hex_str(element.cpk_hex_color.unwrap_or("FFFFFF")).unwrap();
 
                     println!(
                         "{}",
@@ -80,7 +80,7 @@ fn main() {
                     } else {
                         0
                     };
-                    let rgb = Rgb::from_hex_str(element.cpk_hex_color.unwrap_or("000000")).unwrap();
+                    let rgb = Rgb::from_hex_str(element.cpk_hex_color.unwrap_or("FFFFFF")).unwrap();
 
                     println!(
                         "{}",
